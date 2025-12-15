@@ -149,7 +149,7 @@
 		[ 58.521762794034359, 31.286123570583236,  "Великий Новгород", "https://ru.wikipedia.org/wiki/Великий_Новгород"],
 		[ 59.221842100533529, 39.891641610804427, "Вологода", "https://ru.wikipedia.org/wiki/Вологда"],
 		[ 67.666878326558574, 53.120151074527456,  "Нарьян-Мар", "https://ru.wikipedia.org/wiki/Нарьян-Мар"],
-		[ 61.666879598424686, 50.835438436514735,  "Сыктывкар", "https://ru.wikipedia.org/wiki/Сыктывкар"]
+		[ 61.666879598424686, 50.835438436514735,  "Сыктывкар", "https://ru.wikipedia.org/wiki/Сыктывкар"],
 	  ];
 	  
 	   
@@ -191,7 +191,7 @@
 	   //С помощь цикла for заполняем тематический слой маркерами с координатами административных центров из созданного массивами, с добавлением всплывающего окна с названием центра
 	   for (let i = 0; i < points.length; i++) {
        const [lat, lng, popupText, wikiUrl] = points[i];
-       marker = new L.marker([lat, lng], {icon: admIcon}).bindPopup(popupText)
+       marker = new L.marker([lat, lng], {icon: admIcon, title: popupText}).bindPopup(popupText)
 	   .on('dblclick', function() {
             window.open(wikiUrl, '_blank');
         })
